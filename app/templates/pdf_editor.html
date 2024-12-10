@@ -1,0 +1,14 @@
+<!-- templates/pdf_editor.html -->
+{% extends "base.html" %}
+
+{% block title %}PDF Editor - SAFAR EDGE{% endblock %}
+
+{% block content %}
+    <h1>PDF Editor</h1>
+    <form action="{% url 'pdf_editor' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Select PDF:</label>
+        <input type="file" name="pdf" required>
+        <button type="submit">Upload PDF</button>
+    </form>
+{% endblock %}

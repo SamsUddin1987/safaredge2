@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Merge PDFs - SAFAR EDGE{% endblock %}
+
+{% block content %}
+    <h1>Merge PDFs</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Select PDFs to merge:</label>
+        <input type="file" name="pdfs" multiple required>
+        <button type="submit">Merge PDFs</button>
+    </form>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+{% endblock %}

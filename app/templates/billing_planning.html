@@ -1,0 +1,20 @@
+<!-- templates/billing_planning.html -->
+{% extends "base.html" %}
+
+{% block title %}Billing & Planning - SAFAR EDGE{% endblock %}
+
+{% block content %}
+    <h1>Billing & Planning</h1>
+    <p>Manage your billing and planning tasks with ease using SAFAR EDGE.</p>
+
+    <!-- Example Call-to-Action Button -->
+    <a href="/billing-system" class="btn">Manage Billing</a>
+
+    <!-- Optional Form for Billing Task -->
+    <form action="/submit-billing" method="POST">
+        {% csrf_token %}
+        <label for="task">Billing Task:</label>
+        <input type="text" id="task" name="task" required>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

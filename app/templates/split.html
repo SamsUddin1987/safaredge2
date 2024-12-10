@@ -1,0 +1,14 @@
+<!-- templates/split.html -->
+{% extends "base.html" %}
+
+{% block title %}Split PDF - SAFAR EDGE{% endblock %}
+
+{% block content %}
+    <h1>Split PDF</h1>
+    <form action="{% url 'split' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Select PDF to Split:</label>
+        <input type="file" name="pdf" required>
+        <button type="submit">Split PDF</button>
+    </form>
+{% endblock %}

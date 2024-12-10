@@ -1,0 +1,16 @@
+<!-- templates/rotate.html -->
+{% extends "base.html" %}
+
+{% block title %}Rotate PDF - SAFAR EDGE{% endblock %}
+
+{% block content %}
+    <h1>Rotate PDF</h1>
+    <form action="{% url 'rotate' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Select PDF to Rotate:</label>
+        <input type="file" name="pdf" required>
+        <label>Rotation Angle (degrees):</label>
+        <input type="number" name="angle" required>
+        <button type="submit">Rotate PDF</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SAFAR EDGE{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="welcome-quote">Welcome to SAFAR EDGE - Your Creative Space!</div>
+        <nav class="menu-container">
+            <ul class="menu">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">PDF Editor</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'merge' %}">Merge</a>
+                        <a href="{% url 'split' %}">Split</a>
+                        <a href="{% url 'remove_password' %}">Remove Password</a>
+                        <a href="{% url 'rotate' %}">Rotate</a>
+                    </div>
+                </li>                
+                <li><a href="{% url 'billing_planning' %}">Billing & Planning</a></li>
+                <li><a href="{% url 'qa_qc' %}">QA/QC</a></li>
+                <li><a href="{% url 'survey' %}">Survey</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 SAFAR EDGE - All rights reserved.</p>
+    </footer>
+</body>
+</html>
